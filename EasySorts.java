@@ -1,5 +1,3 @@
-import java.util.Arrays;
-
 public class EasySorts {
     public static void BubbleSort (int[] arr) {
         int length = arr.length;
@@ -15,14 +13,26 @@ public class EasySorts {
         }
     }
 
+    public void InsertionSort(int[] arr){
+
+    }
+
+    public void SelectionSort(int[] arr){
+        
+    }
+
     
 
     public static void main(String[] args) {
         int[] test1 = new int[5];
+
         for(int i = 0; i < test1.length; i++){
             test1[i] = test1.length -i;
         }
+
         int[] test2 = test1;
+
+
         BubbleSort(test1);
         System.out.println(testSorted(test1));
     }

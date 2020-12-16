@@ -1,16 +1,35 @@
 package src;
 
 public class Search {
-    
-    public boolean binarySearch(int[] arr, int elem){
+
+    public boolean binarySearch(int[] arr, int elem) {
+        // idea: find middle element, if middle element is @param elem, then return true
+        // else apply binarySearch on left subarray and right sub array
+        int left = 0;
+        int right = arr.length;
+        return BSHelper(arr, elem, left, right - 1);
+    }
+
+    public boolean BSHelper(int[] arr, int elem, int left, int right) {
+        if (left <= right) {
+            int mid = (left + right) / 2;
+            if(arr[mid] == elem) return true;
+            if(arr[mid] > elem) return BSHelper(arr, elem, left, mid-1);
+            else return BSHelper(arr, elem, mid+1, right);
+        } return false;
+    }
+
+    public boolean linearSearch(int[] arr, int elem) {
+        // linear seach is only used in order
+        // to test binary and interpolation algorithms
+        for (int i : arr) {
+            if (i == elem)
+                return true;
+        }
         return false;
     }
 
-    public boolean linearSearch(int[] arr, int elem){
-        return false;
-    }
-
-    public boolean interpolationSearch(int[] arr, int elem){
+    public boolean interpolationSearch(int[] arr, int elem) {
         return false;
     }
 }

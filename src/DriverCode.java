@@ -6,9 +6,15 @@ public class DriverCode {
         int[] test2 = generateTestSorting(100);
 
         EasySorts easySorts = new EasySorts();
+        Search search = new Search();
 
         easySorts.BubbleSort(test1);
         easySorts.SelectionSort(test2);
+
+        int searchTester = (int) (Math.random() * 1000);
+
+        System.out.println(search.binarySearch(test1, searchTester) == search.linearSearch(test1, searchTester));
+        System.out.println(search.binarySearch(test2, searchTester) == search.linearSearch(test2, searchTester));
 
         System.out.println(testSorted(test1));
         System.out.println(testSorted(test2));
@@ -30,5 +36,4 @@ public class DriverCode {
         return arr;
     }
 
-    
 }

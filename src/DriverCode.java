@@ -2,9 +2,11 @@ package src;
 
 public class DriverCode {
     public static void main(String[] args) {
-        int[] test1 = generateTest(100);
-        int[] test2 = generateTest(100);
+        int[] test1 = generateTestSorting(100);
+        int[] test2 = generateTestSorting(100);
+
         EasySorts easySorts = new EasySorts();
+
         easySorts.BubbleSort(test1);
         easySorts.SelectionSort(test2);
 
@@ -20,11 +22,13 @@ public class DriverCode {
         return true;
     }
 
-    public static int[] generateTest(int length) {
+    public static int[] generateTestSorting(int length) {
         int[] arr = new int[length];
         for (int i = 0; i < length; i++) {
             arr[i] = (int) (Math.random() * 1000);
         }
         return arr;
     }
+
+    
 }

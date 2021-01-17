@@ -2,7 +2,7 @@ package src;
 
 public class Search {
 
-    public boolean binarySearch(int[] arr, int elem) {
+    public boolean binarySearch(int[] arr, int elem) { //recursive
         // idea: find middle element, if middle element is @param elem, then return true
         // else apply binarySearch on left subarray and right sub array
         int left = 0;
@@ -23,7 +23,7 @@ public class Search {
         return false;
     }
 
-    public static int binIter(int[] arr, int toFind) {
+    public static int binIter(int[] arr, int toFind) { // iterative
         int left = 0;
         int right = arr.length - 1;
         while(left <= right){
@@ -41,13 +41,11 @@ public class Search {
         if(toFind < arr[0]) return 0;
         if(toFind > arr[right]) return arr.length;
         while(left <= right){
-            int midLeft = (left + right) / 2;
-            int midRight = (left + right) / 2 + 1;
-            if(toFind >= arr[midLeft] && toFind <= arr[midRight]) return midLeft;
-            if(toFind < arr[midLeft]) right = midLeft - 1;
-            else left = midRight + 1;
+            int mid = (left + right) / 2;
+            if(toFind >= arr[mid] && toFind <= arr[mid + 1]) return mid + 1;
+            if(toFind < arr[mid]) right = mid - 1;
+            else left = mid + 1;
         }
-
         return -1;
     }
 

@@ -9,6 +9,8 @@ public class DriverCode {
         int[] test3 = generateTestSorting(100);
         int[] test4 = generateTestSorting(100);
         int[] test5 = { 12, 24, 36, 37, 38, 90 };
+        int[] test6 = generateTestSorting(100);
+        int[] test7 = generateTestSorting(100);
 
         EasySorts easySorts = new EasySorts();
         Search search = new Search();
@@ -17,7 +19,9 @@ public class DriverCode {
         easySorts.SelectionSort(test2);
         HeapSortImpl.heapSort(test3);
         MediumSorts.MergeSort(test4, 0, 99);
-        System.out.println(Arrays.toString(test4));
+        //System.out.println(Arrays.toString(test4));
+        easySorts.InsertionSort(test6);
+        MediumSorts.QuickSort(test7, 0, test7.length-1);
 
         int searchTester = (int) (Math.random() * 1000);
 
@@ -28,8 +32,9 @@ public class DriverCode {
         System.out.println(testSorted(test2));
         System.out.println(testSorted(test3));
         System.out.println(testSorted(test4));
-        System.out.println(Search.binIterTwo(test5, 25));
-        System.out.println(Search.binIter(test5, 37));
+        System.out.println(Search.binIterTwo(test5, 13));
+        System.out.println(testSorted(test6));
+        System.out.println(testSorted(test7));
     }
 
     public static boolean testSorted(int[] arr) {

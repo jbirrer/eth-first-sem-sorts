@@ -1,5 +1,7 @@
 package src;
 
+import java.util.Arrays;
+
 public class EasySorts {
     public void BubbleSort(int[] arr) {
         /*
@@ -21,9 +23,15 @@ public class EasySorts {
 
     public void InsertionSort(int[] arr) {
         int length = arr.length;
-        for (int k = 0; k < length - 2; k++) {
-            
+        for (int k = 1; k < length - 1; k++) {
+            int i = Search.binIterTwo(Arrays.copyOfRange(arr, 0, k), arr[k+1]);
+            int b = arr[k+1];
+            for(int j = k; j > i; j--){
+                arr[j+1] = arr[j];
+            }
+            arr[i] = b;
         }
+        System.out.println(Arrays.toString(arr));
     }
 
     public void SelectionSort(int[] arr) {

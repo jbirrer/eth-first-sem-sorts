@@ -4,7 +4,7 @@ import java.util.Arrays;
 
 public class MediumSorts {
 
-    public static void Merge(int[] arr, int left, int middle, int right) {
+    public static void Merge(int[] arr, int left, int middle, int right) { // not working yet
         int[] B = new int[right - left + 1];
         int i = left;
         int j = middle + 1;
@@ -45,8 +45,32 @@ public class MediumSorts {
 
     }
 
-    public void QuickSort(int[] arr) {
+    public static void QuickSort(int[] arr, int left, int right) {
+        if(left < right){
+            int k = Partition(arr, left, right);
+            QuickSort(arr, left, k - left);
+            QuickSort(arr, k + 1, right);
+        }
+    }
 
+    public static int Partition(int[] arr, int left,int right){
+        int i = left;
+        int j = right -1;
+        int p = arr[right];
+        do {
+            while (i < right && arr[i] < p) {
+                i++;
+            }
+            while (j > left && arr[j] > p) {
+                j++;
+            }
+            if(i<j){
+                int temp = arr[i];
+                arr[i] = arr[right];
+                arr[right] = temp;
+            }
+        } while (i >= j);
+        return i;
     }
 
     public static void main(String[] args) {

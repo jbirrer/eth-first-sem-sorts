@@ -19,8 +19,7 @@ public class MediumSorts {
             }
             k++;
         }
-        while (i <= middle)
-        {
+        while (i <= middle) {
             B[k] = arr[i];
             i++;
             k++;
@@ -30,8 +29,8 @@ public class MediumSorts {
             j++;
             k++;
         }
-        for (k = left; k < right; k++) {
-            arr[k] = B[k - left + 1];
+        for (k = left; k <= right; k++) {
+            arr[k] = B[k - left];
         }
     }
 
@@ -46,30 +45,33 @@ public class MediumSorts {
     }
 
     public static void QuickSort(int[] arr, int left, int right) {
-        if(left < right){
+        if (left < right) {
             int k = Partition(arr, left, right);
-            QuickSort(arr, left, k - left);
+            QuickSort(arr, left, k - 1);
             QuickSort(arr, k + 1, right);
         }
     }
 
-    public static int Partition(int[] arr, int left,int right){
-        int i = left;
-        int j = right -1;
-        int p = arr[right];
+    public static int Partition(int[] arr, int l, int r) {
+        int i = l;
+        int j = r - 1;
+        int p = arr[r];
         do {
-            while (i < right && arr[i] < p) {
+            while (i < r && arr[i] < p) {
                 i++;
             }
-            while (j > left && arr[j] > p) {
-                j++;
+            while (j > l && arr[j] > p) {
+                j--;
             }
-            if(i<j){
+            if (i < j) {
                 int temp = arr[i];
-                arr[i] = arr[right];
-                arr[right] = temp;
+                arr[i] = arr[j];
+                arr[j] = temp;
             }
-        } while (i >= j);
+        } while (i < j);
+        int t = arr[i];
+        arr[i] = arr[r];
+        arr[r] = t;
         return i;
     }
 

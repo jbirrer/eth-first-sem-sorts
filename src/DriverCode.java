@@ -10,7 +10,7 @@ public class DriverCode {
         int[] test4 = generateTestSorting(100);
         int[] test5 = { 12, 24, 36, 37, 38, 90 };
         int[] test6 = generateTestSorting(100);
-        int[] test7 = generateTestSorting(100);
+        int[] test8 = { 12, 2, 8, 37, 380, 90 };
 
         EasySorts easySorts = new EasySorts();
         Search search = new Search();
@@ -18,10 +18,11 @@ public class DriverCode {
         easySorts.BubbleSort(test1);
         easySorts.SelectionSort(test2);
         HeapSortImpl.heapSort(test3);
-        MediumSorts.MergeSort(test4, 0, 99);
-        //System.out.println(Arrays.toString(test4));
+        System.out.println(Arrays.toString(test4));
+        MediumSorts.MergeSort(test4, 0, test4.length-1);
+        System.out.println(Arrays.toString(test4));
         easySorts.InsertionSort(test6);
-        MediumSorts.QuickSort(test7, 0, test7.length-1);
+        MediumSorts.QuickSort(test8, 0, test8.length-1);
 
         int searchTester = (int) (Math.random() * 1000);
 
@@ -32,9 +33,10 @@ public class DriverCode {
         System.out.println(testSorted(test2));
         System.out.println(testSorted(test3));
         System.out.println(testSorted(test4));
-        System.out.println(Search.binIterTwo(test5, 13));
         System.out.println(testSorted(test6));
-        System.out.println(testSorted(test7));
+        System.out.println(testSorted(test8));
+
+        System.out.println(Search.binIterTwo(test5, 13));
     }
 
     public static boolean testSorted(int[] arr) {

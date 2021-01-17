@@ -31,7 +31,7 @@ public class EasySorts {
             }
             arr[i] = b;
         }
-        System.out.println(Arrays.toString(arr));
+        
     }
 
     public void SelectionSort(int[] arr) {

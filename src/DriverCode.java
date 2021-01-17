@@ -1,10 +1,14 @@
 package src;
 
+import java.util.Arrays;
+
 public class DriverCode {
     public static void main(String[] args) {
         int[] test1 = generateTestSorting(100);
         int[] test2 = generateTestSorting(100);
         int[] test3 = generateTestSorting(100);
+        int[] test4 = generateTestSorting(100);
+        int[] test5 = { 12, 24, 36, 37, 38, 90 };
 
         EasySorts easySorts = new EasySorts();
         Search search = new Search();
@@ -12,6 +16,8 @@ public class DriverCode {
         easySorts.BubbleSort(test1);
         easySorts.SelectionSort(test2);
         HeapSortImpl.heapSort(test3);
+        MediumSorts.MergeSort(test4, 0, 99);
+        System.out.println(Arrays.toString(test4));
 
         int searchTester = (int) (Math.random() * 1000);
 
@@ -21,6 +27,9 @@ public class DriverCode {
         System.out.println(testSorted(test1));
         System.out.println(testSorted(test2));
         System.out.println(testSorted(test3));
+        System.out.println(testSorted(test4));
+        System.out.println(Search.binIterTwo(test5, 25));
+        System.out.println(Search.binIter(test5, 37));
     }
 
     public static boolean testSorted(int[] arr) {

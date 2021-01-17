@@ -13,10 +13,42 @@ public class Search {
     public boolean BSHelper(int[] arr, int elem, int left, int right) {
         if (left <= right) {
             int mid = (left + right) / 2;
-            if(arr[mid] == elem) return true;
-            if(arr[mid] > elem) return BSHelper(arr, elem, left, mid-1);
-            else return BSHelper(arr, elem, mid+1, right);
-        } return false;
+            if (arr[mid] == elem)
+                return true;
+            if (arr[mid] > elem)
+                return BSHelper(arr, elem, left, mid - 1);
+            else
+                return BSHelper(arr, elem, mid + 1, right);
+        }
+        return false;
+    }
+
+    public static int binIter(int[] arr, int toFind) {
+        int left = 0;
+        int right = arr.length - 1;
+        while(left <= right){
+            int middle = (left + right) / 2;
+            if(arr[middle] == toFind) return middle;
+            else if(arr[middle] > toFind) right = middle -1;
+            else left = middle + 1;
+        }
+        return -1;
+    }
+
+    public static int binIterTwo(int [] arr, int toFind){
+        int left = 0;
+        int right = arr.length - 1;
+        if(toFind < arr[0]) return 0;
+        if(toFind > arr[right]) return arr.length;
+        while(left <= right){
+            int midLeft = (left + right) / 2;
+            int midRight = (left + right) / 2 + 1;
+            if(toFind >= arr[midLeft] && toFind <= arr[midRight]) return midLeft;
+            if(toFind < arr[midLeft]) right = midLeft - 1;
+            else left = midRight + 1;
+        }
+
+        return -1;
     }
 
     public boolean linearSearch(int[] arr, int elem) {

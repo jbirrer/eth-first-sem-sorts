@@ -21,6 +21,9 @@ public class EasySorts {
 
     public void InsertionSort(int[] arr) {
         int length = arr.length;
+        for (int k = 0; k < length - 2; k++) {
+            
+        }
     }
 
     public void SelectionSort(int[] arr) {
@@ -47,5 +50,4 @@ public class EasySorts {
 
     }
 
-    
 }

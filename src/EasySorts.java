@@ -20,7 +20,7 @@ public class EasySorts {
     }
 
     public void InsertionSort(int[] arr) {
-
+        int length = arr.length;
     }
 
     public void SelectionSort(int[] arr) {

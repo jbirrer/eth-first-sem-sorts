@@ -4,12 +4,14 @@ public class DriverCode {
     public static void main(String[] args) {
         int[] test1 = generateTestSorting(100);
         int[] test2 = generateTestSorting(100);
+        int[] test3 = generateTestSorting(100);
 
         EasySorts easySorts = new EasySorts();
         Search search = new Search();
 
         easySorts.BubbleSort(test1);
         easySorts.SelectionSort(test2);
+        HeapSortImpl.heapSort(test3);
 
         int searchTester = (int) (Math.random() * 1000);
 
@@ -18,6 +20,7 @@ public class DriverCode {
 
         System.out.println(testSorted(test1));
         System.out.println(testSorted(test2));
+        System.out.println(testSorted(test3));
     }
 
     public static boolean testSorted(int[] arr) {

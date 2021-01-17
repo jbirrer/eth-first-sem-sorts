@@ -18,9 +18,7 @@ public class DriverCode {
         easySorts.BubbleSort(test1);
         easySorts.SelectionSort(test2);
         HeapSortImpl.heapSort(test3);
-        System.out.println(Arrays.toString(test4));
         MediumSorts.MergeSort(test4, 0, test4.length-1);
-        System.out.println(Arrays.toString(test4));
         easySorts.InsertionSort(test6);
         MediumSorts.QuickSort(test8, 0, test8.length-1);
 

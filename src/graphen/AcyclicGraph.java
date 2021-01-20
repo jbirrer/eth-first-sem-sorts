@@ -35,4 +35,4 @@ public class AcyclicGraph{
       
       for(int i=0;i<m;i++)
         out_edges[edge_from_array[i]][out_degrees[edge_from_array[i]]++]=edge_to_array[i];
-    }
+    }}

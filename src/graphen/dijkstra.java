@@ -10,9 +10,7 @@ import java.util.Scanner;
 public class dijkstra {
     public static void main(String[] args) throws FileNotFoundException {
         // Uncomment the following two lines if you want to read from a file
-        Scanner scan = new Scanner(new File("src/graphen/dijkstra.txt"));
-        
-
+        Scanner scan = new Scanner(new File("src/graphen/dijkstra2.txt"));
         int n=scan.nextInt();     // number of vertices
         int m=scan.nextInt();     // number of edges
         
@@ -30,41 +28,39 @@ public class dijkstra {
         
         
         GraphImpl G= new GraphImpl(n, m, edge_array);
-        System.out.println(Arrays.toString(doDijkstra(G, 0)));
+        doDijkstra(G, 0);
 
-        //System.out.println(G.m);
-        //System.out.println(G.n);
-        //System.out.println(Arrays.toString(G.degrees));
-        //System.out.println(Arrays.deepToString(G.edges));
-        //System.out.println(Arrays.deepToString(G.weights));
-
-        // Uncomment the following line if you want to read from a file
         // In.close();
     }
 
-    public static int[] doDijkstra(GraphImpl G, int start){ // does not work yet
-        PriorityQueue<Pair> heap = new PriorityQueue<Pair>();
-        ArrayList<Integer> S = new ArrayList<Integer>();
-
+    public static int[] doDijkstra(GraphImpl G, int start){ // does not work yet, i wonder why, i wonder how, lemon treeeeeeeeeeeeeeeEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE. Its working now halleluja
         int[] d = new int[G.n];
+        int[] p = new int[G.n];
+        for(int i = 0; i<d.length;i++){
+            d[i] = Integer.MAX_VALUE;
+            p[i] = Integer.MAX_VALUE;
+        }
         d[start] = 0;
-
-        for(int i = 0; i < G.n; i++){
-            if(i!=start){
-                d[i] = Integer.MAX_VALUE;
+        p[start] = 0;
+        PriorityQueue<Pair> Q = new PriorityQueue<Pair>();
+        Q.add(new Pair(start, 0));
+        while(!Q.isEmpty()){
+            Pair u = Q.poll();
+            for(int i = 0; i < G.edges[u.index].length;i++){
+                int v = G.edges[u.index][i];
+                if(p[v]==Integer.MAX_VALUE){
+                    d[v] = d[u.index] + G.weights[u.index][i];
+                    p[v] = u.index;
+                    Q.add(new Pair(v, d[v]));
+                } else if(d[u.index] + G.weights[u.index][i] < d[v]){
+                    d[v] = d[u.index] + G.weights[u.index][i];
+                    p[v] = u.index;
+                    Q.add(new Pair(v, d[v]));
+                }
             }
         }
-        
-        heap.add(new Pair(start, 0));
-
-        while(S.size()!=G.n){
-            int v = heap.remove().index;
-            S.add(v);
-            for(int i = 0; i < G.edges[v].length;i++){
-                d[G.edges[v][i]] = Math.min(d[G.edges[v][i]], d[v] + G.weights[G.edges[v][i]][v]);
-                heap.add(new Pair(i, d[i]));
-            }
-        }
+        System.out.println(Arrays.toString(d));
+        System.out.println(Arrays.toString(p));
         return d;
     }
 }

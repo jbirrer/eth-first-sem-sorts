@@ -4,7 +4,7 @@ import java.util.Arrays;
 
 public class MediumSorts {
 
-    public static void Merge(int[] arr, int left, int middle, int right) { // not working yet
+    public static void Merge(int[] arr, int left, int middle, int right) { 
         int[] B = new int[right - left + 1];
         int i = left;
         int j = middle + 1;

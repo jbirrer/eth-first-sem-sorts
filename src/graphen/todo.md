@@ -1,10 +1,6 @@
  ### TODO: 
-1. Bellman Ford
-2. Boruvka
-3. Prims
-4. Union Find
-5. Kruskals
-6. Floyd Warshall
+1. Boruvka
+
 
 
 ### Repeat:
@@ -19,6 +15,6 @@
 - upper and lower bound approximation from folgen
 - rotations
 - runtimes
-- pre and post order
+- pre and post order, find cycles from DFS and BFS?
 - palindrome fs17 solution
 

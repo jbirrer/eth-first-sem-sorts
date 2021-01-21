@@ -26,15 +26,15 @@ public class bellmanFord {
         
         
         GraphImpl G= new GraphImpl(n, m, edge_array);
-        System.out.println(Arrays.toString(doBellmanFord(G, 0)));
-
+       // System.out.println(Arrays.toString(doBellmanFord(G, 0)));
+        doBellmanFord(G, 0);
 
         // In.close();
     }
 
-    public static int[] doBellmanFord(GraphImpl G, int start){ //not working yet damn
-        int[] d = new int[G.n];
-        int[] p = new int[G.n];
+    public static int[] doBellmanFord(GraphImpl G, int start){ //does not work, because I implemented it with unweighted edges :clown:
+        int[] d = new int[G.n]; //distance
+        int[] p = new int[G.n]; //parent
     
         for(int i = 0; i < G.n; i++){
             d[i] = Integer.MAX_VALUE;
@@ -42,12 +42,12 @@ public class bellmanFord {
 
         d[start] = 0;
 
-        for(int i = 0; i < G.n; i++){
+        for(int i = 0; i < G.n; i++){ // do for every edge
             for (int u = 0; u < G.edges.length; u++) {
                 if (G.edges[u] != null) {
                     for (int j = 0; j < G.edges[u].length; j++) {
                         int v = G.edges[u][j];
-                        if(d[v] > d[u] + G.weights[u][j]){
+                        if((d[v] > d[u] + G.weights[u][j])){
                             d[v] = d[u] + G.weights[u][j];
                             p[v] = u;
                         }
@@ -56,7 +56,6 @@ public class bellmanFord {
             }
 
         }
-        System.out.println(Arrays.toString(d));
         for (int k = 0; k < G.edges.length; k++) {
             if (G.edges[k] != null) {
                 for (int j = 0; j < G.edges[k].length; j++) {

@@ -9,7 +9,10 @@ public class boruvka {
 
     public static void doBoruvka(Graph G){ // does not work, schisst mich a
         ArrayList<Integer> F = new ArrayList<Integer>();
-        boolean[] d = new boolean[G.n];
+        // while F not spannbaum
+            // for every ZHK
+                // find minimal edge
+            // add edges to F
         
         
         
@@ -23,3 +26,7 @@ public class boruvka {
         return true;
     }
 }
+
+
+
+

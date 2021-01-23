@@ -3,11 +3,10 @@ package src.graphen;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Arrays;
-import java.util.HashSet;
 import java.util.LinkedList;
 import java.util.PriorityQueue;
 import java.util.Scanner;
-import java.util.Set;
+
 
 public class prim {
     public static void main(String[] args) throws FileNotFoundException {

@@ -20,3 +20,8 @@
 - median der mediane
 - back, forward, side kanten
 - geometrische summe
+- genau lesen joel
+
+
+
+

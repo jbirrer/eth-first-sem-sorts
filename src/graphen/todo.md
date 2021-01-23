@@ -19,5 +19,5 @@
 - pre and post order, find cycles from DFS and BFS?
 - palindrome fs17 solution
 - median der mediane &#x2611;
-- back, forward, side kanten
+- back, forward, side kanten &#x2611;
 - geometrische summe

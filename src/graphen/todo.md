@@ -3,26 +3,31 @@
 
 
 
-### Repeat:
-- Adjacency List Runtime &#x2611;
-- Power Algortihm from HS19 &#x2611;
-- Sums &#x2611;
-- Recurrences &#x2611;
-- Geometric Formula
-- Induction, abschätzen
-- Invariants
-- DP!
-- Lower Bound approximation from sums 
-- upper and lower bound approximation from folgen
-- rotations
-- runtimes
-- pre and post order, find cycles from DFS and BFS?
-- palindrome fs17 solution
-- median der mediane &#x2611;
-- back, forward, side kanten &#x2611;
-- geometrische summe
-- genau lesen joel
+### Repeat A&D:
+- [ ] Find cycles from DFS and BFS
+- [ ] Geometric Formula
+- [ ] Invariants
+- [ ] DP
+- [ ] Lower bound approximation from sums
+- [ ] Upper and lower bound approximation from folgen
+- [ ] Rotations
+- [ ] Runtimes
+- [X] Pre and post order
+- [X] Induction, abschätzen
+- [X] Median der mediane
+- [X] Back, forward, side kanten
+- [X] Genau lesen
+- [X] Sums
+- [X] Recurrences
 
-
-
+### Repeat DM:
+- [ ] Proof Structure, Equivalence Relation
+- [ ] Subgroup Proof
+- [ ] CNF -> DNF
+- [ ] Countability
+- [ ] Show X divides Y
+- [ ] CRT + edge case
+- [ ] Find Inverse in R[x]
+- [ ] Resolution Calculus
+- [ ] R, R*, units and so on
 

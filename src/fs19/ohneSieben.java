@@ -19,14 +19,7 @@ public class ohneSieben {
             j--;
             sum2 = "" + j;
         }
-
-        
-
-        
-
         System.out.println(sum1 + " " + sum2);
     }
 
 }
-
-

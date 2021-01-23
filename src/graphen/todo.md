@@ -4,10 +4,11 @@
 
 
 ### Repeat:
-- Adjacency List Runtime
-- Power Algortihm from HS19
-- Sums
-- Recurrences, Geometric Formula
+- Adjacency List Runtime &#x2611;
+- Power Algortihm from HS19 &#x2611;
+- Sums &#x2611;
+- Recurrences &#x2611;
+- Geometric Formula
 - Induction, abschätzen
 - Invariants
 - DP!
@@ -17,8 +18,8 @@
 - runtimes
 - pre and post order, find cycles from DFS and BFS?
 - palindrome fs17 solution
-- median der mediane
-- back, forward, side kanten
+- median der mediane &#x2611;
+- back, forward, side kanten &#x2611;
 - geometrische summe
 - genau lesen joel
 

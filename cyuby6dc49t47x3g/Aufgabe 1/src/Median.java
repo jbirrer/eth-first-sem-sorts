@@ -19,9 +19,4 @@ public class Median {
 			return A[A.length/2];
 		} else return ((double) A[A.length/2-1] + A[A.length/2 ])/2;
 	}
-	public static void main(String[] args) {
-		Scanner input = new Scanner("1 5 5 3 ");
-		double result = Median.median(input);
-		assertEquals(3.5, result, 0.0001);
-	}
 }
